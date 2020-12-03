@@ -45,7 +45,7 @@ module.exports = {
     async execute(message, args) {
 
       // MODULE IMPORTS
-      const Help = client.modules.get("help");
+      const Help = client.modules.get("helpModule");
 
 
 

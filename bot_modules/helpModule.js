@@ -7,7 +7,7 @@ const { PREFIX } = require('../config.js');
 
 // THIS MODULE
 module.exports = {
-    name: "help",
+    name: "helpModule",
 
     /**
      * List all commands a standard User can use
