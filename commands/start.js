@@ -4,16 +4,16 @@ const Discord = require("discord.js");
 
 // VARIABLE IMPORTS
 const { client } = require('../constants.js');
-let { PREFIX } = require('../config.js');
-
-// MODULE IMPORTS, IF ANY
-
+const { PREFIX } = require('../config.js');
 
 // THIS COMMAND
 module.exports = {
-    name: 'ping',
-    description: 'Returns your average ping to the Bot in milliseconds',
-    usage: [ `${PREFIX}ping ` ],
+    name: 'start',
+    description: 'Starts a Trivia Round!',
+
+    // Usage(s)
+    //     - Using an Array just in case there's multiple usages
+    usage: [ `${PREFIX}start ` ],
 
     // Type of Command
     //     - Use 'general' if not in a sub-folder within .\commands\
@@ -29,10 +29,10 @@ module.exports = {
     //     'twilightzebby' - Only TwilightZebby#1955 can use this command
     //     'host' - Only the Round Hosts can use this command. Round Hosts are listed by USER IDs in the hidden .\config.js file
     //     If commented out, everyone can use this command
-    //limitation: 'twilightzebby',
+    limitation: 'twilightzebby',
 
     // Command's cooldown, in seconds
-    cooldown: 10,
+    cooldown: 30,
 
     /**
      * Command's functionality
@@ -41,8 +41,16 @@ module.exports = {
      * @param {Array<String>} args 
      */
     async execute(message, args) {
+
+      // MODULE IMPORTS, IF ANY
+      const Trivia = client.modules.get("triviaModule");
       
-      return await message.channel.send(`Pong!\n> Your ping is ${message.client.ws.ping.toFixed(2)}ms`);
+
+
+
+
+      
+      return await Trivia.Main(message);
 
       //END OF COMMAND
     },

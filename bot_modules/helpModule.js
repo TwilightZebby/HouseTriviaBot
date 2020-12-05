@@ -277,10 +277,10 @@ module.exports = {
 
                 switch(command.limitation) {
 
-                    case "owner":
+                    case "twilightzebby":
                         embed.addFields({
                             name: `Limitation`,
-                            value: `\u200B Can only be used by TwilightZebby#1955, the Server Owner`
+                            value: `\u200B Can only be used by TwilightZebby#1955`
                         });
 
 

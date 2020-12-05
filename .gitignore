@@ -4,3 +4,4 @@ config.js
 /questions.json
 /playerScores.json
 /houseScores.json
+/roundScores.json
