@@ -12,11 +12,14 @@ const QSTORE = require('../questions.json'); // Bringing in the Questions & Answ
 const HOUSESCORES = require('../houseScores.json');
 const PLAYERSCORES = require('../playerScores.json');
 const TEMPSCORES = require('../roundScores.json');
-const { from_string } = require('libsodium-wrappers');
+const EMPTYSCORES = require('../templates/templateJSON.json');
+let questionInterval;
+let delay = 50000;
 
 // THIS MODULE
 module.exports = {
     name: "triviaModule",
+
 
     /**
      * Handles the main functions of Trivia Rounds
@@ -36,10 +39,10 @@ module.exports = {
         .setTitle(`New Trivia Round!`)
         .setDescription(`A new Trivia Round is about to start!
         
-        You will have 30 seconds per question to answer them correctly.
+        You will have 20 seconds per question to answer them correctly.
         The first 10 correct answers score points, the quicker you are, the more points you earn!
         
-        Answers are case-insensitive, so don't worry about CAPITAL letters!`)
+        Answers are case-insensitive, so don't worry about UPPERCASE letters!`)
         .addFields(
             {
                 name: `Round Host`,
@@ -61,31 +64,47 @@ module.exports = {
 
         // QUESTIONS!
         let currentQuestion = 1;
+        delay = 50000;
 
 
         // First question
         setTimeout(async () => {
             await this.AskQuestion(triviaChannel, currentQuestion);
             currentQuestion += 1;
-        }, 30000);
+        }, 20000);
 
-
-        // TODO: Dynamically set Interval period to be different for the first question then the others
 
         // Rest of the questions
-        let questionInterval = setInterval(async () => {
+        questionInterval = setTimeout(async function QuestionLoop() {
+
+            // DO NOT REMOVE - otherwise everything breaks!
+            // Yes, I know importing something inside of itself shouldn't be, but it doesn't work otherwise without this!
+            const Trivia = client.modules.get("triviaModule");
 
             if ( currentQuestion >= ( CONFIG.QUESTION_AMOUNT + 1 ) ) {
-                await this.Results(triviaChannel);
-                clearInterval(questionInterval);
+    
+                await Trivia.Results(triviaChannel);
+                clearTimeout(questionInterval);
                 return;
+    
+            }
+            else if ( currentQuestion === 2 ) {
+    
+                delay = 30000;
+                await Trivia.AskQuestion(triviaChannel, currentQuestion);
+                currentQuestion += 1;
+                questionInterval = setTimeout(QuestionLoop, delay);
+    
             }
             else {
-                await this.AskQuestion(triviaChannel, currentQuestion);
+    
+                await Trivia.AskQuestion(triviaChannel, currentQuestion);
                 currentQuestion += 1;
+                questionInterval = setTimeout(QuestionLoop, delay);
+    
             }
-
-        }, 70000);
+    
+        }, delay);
 
     },
     
@@ -220,7 +239,7 @@ module.exports = {
         .setDescription(`${roundResultsArray.join(`\n`)}`);
 
         let houseEmbed = new Discord.MessageEmbed().setColor('GOLD')
-        .setTitle(`New House Rankings`)
+        .setTitle(`Updated House Rankings`)
         .setDescription(`${houseArray.join(`\n`)}`);
 
 
@@ -235,8 +254,13 @@ module.exports = {
 
 
 
+        // Clear roundScores.json so that it is ready for the next round
+        fs.writeFile('./roundScores.json', JSON.stringify(EMPTYSCORES, null, 4), async (err) => {
+            if (err) {
+                await Errors.LogCustom(err, `ERROR while trying to SAVE EMPTYSCORES to roundScores.json`);
+            }
+        });
 
-        // TODO: CLEAR roundScores.json AFTER EACH ROUND
 
         return;
 
@@ -312,7 +336,7 @@ module.exports = {
 
         // Begin listening for answers
         const filter = m => questionAnswers.includes(`${m.content.toLowerCase()}`) && !m.member.roles.cache.has(CONFIG.STAFFID);
-        const collector = channel.createMessageCollector(filter, { time: 30000, max: 10 });
+        const collector = channel.createMessageCollector(filter, { time: 20000, max: 10 });
         collector.on('collect', (message) => {
 
             if ( userAnswers.length === 10 ) {
@@ -401,7 +425,7 @@ module.exports = {
             
             ${messageArray.join(`\n`)}
             
-            ${currentNumber + 1 === CONFIG.QUESTION_AMOUNT ? "Last Question in 30 seconds..." : currentNumber === CONFIG.QUESTION_AMOUNT ? "Round is over! Results in 30 seconds..." : "Next Question in 30 seconds..."}`);
+            ${currentNumber + 1 === CONFIG.QUESTION_AMOUNT ? "Last Question in 10 seconds..." : currentNumber === CONFIG.QUESTION_AMOUNT ? "Round is over! Results in 10 seconds..." : "Next Question in 10 seconds..."}`);
 
             await channel.send(embed);
             delete embed; // free up cache
