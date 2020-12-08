@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 
 // VARIABLE IMPORTS
 const { client } = require('../constants.js');
-const { PREFIX } = require('../config.js');
+const { PREFIX, HOSTIDS } = require('../config.js');
 
 // THIS MODULE
 module.exports = {
@@ -22,6 +22,60 @@ module.exports = {
         const embed = new Discord.MessageEmbed().setColor('#008bb5')
         .setTitle(`Command List`)
         .setDescription(client.commands.filter(command => command.commandType === "general" && !command.limitation).map(command => command.name).join(`, `))
+        .addFields(
+            {
+                name: `\u200B`,
+                value: `You can use \`${PREFIX}help [command]\` to get more information on a specific command!`
+            }
+        );
+
+        await message.channel.send(embed);
+        delete embed; // Free up cache
+        return;
+
+    },
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * List all commands Trivia Round Hosts can use
+     * 
+     * @param {Discord.Message} message
+     * 
+     * @returns {Promise<Discord.Message>} wrapped Message
+     */
+    async ListHostCommands(message) {
+
+        // Create Embed
+        const embed = new Discord.MessageEmbed().setColor('#008bb5')
+        .setTitle(`Trivia Hosts' Command List`)
+        .setDescription(client.commands.filter(command => command.commandType === "general" && command.limitation !== "twilightzebby").map(command => command.name).join(`, `))
         .addFields(
             {
                 name: `\u200B`,
@@ -212,6 +266,14 @@ module.exports = {
 
 
 
+                    case "host":
+                        if ( !HOSTIDS.includes(message.author.id) ) {
+                            let response = `${message.member.displayName} sorry, but the **${command.name}** command is limited to Trivia Round Hosts.`;
+                            return await message.channel.send(response);
+                        }
+
+
+
                     default:
                         break;
 
@@ -281,6 +343,14 @@ module.exports = {
                         embed.addFields({
                             name: `Limitation`,
                             value: `\u200B Can only be used by TwilightZebby#1955`
+                        });
+
+
+
+                    case "host":
+                        embed.addFields({
+                            name: `Limitation`,
+                            value: `\u200B Can only be used by Trivia Round Hosts`
                         });
 
 

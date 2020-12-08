@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 
 // GLOBAL STUFF
 const { client } = require('./constants.js');
-const { PREFIX, TOKEN } = require('./config.js');
+const { PREFIX, TOKEN, HOSTIDS } = require('./config.js');
 
 
 
@@ -365,6 +365,12 @@ client.on('message', async message => {
                         return await message.channel.send(`${message.member.displayName} sorry, but this command can only be used by TwilightZebby!`);
                     }
                     break;
+
+
+                case 'host':
+                    if ( !HOSTIDS.includes(message.author.id) ) {
+                        return await message.channel.send(`${message.member.displayName} sorry, but this command can only be used by Trivia Round Hosts!`);
+                    }
 
 
                 // Just in case
