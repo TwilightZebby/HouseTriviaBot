@@ -80,14 +80,16 @@ module.exports = {
       if ( playerPoints.length < 10 ) {
 
         for ( let i = 0; i < playerPoints.length; i++ ) {
-          playerArray.push(`${i + 1}) **${playerPoints[i].username}** - ${playerPoints[i].score} points`);
+          const houseEmoji = playerPoints[i].houseName === "Snowman" ? "⛄" : playerPoints[i].houseName === "Elves" ? "🧝" : playerPoints[i].houseName === "Penguins" ? "🐧" : playerPoints[i].houseName === "Santa" ? "🎅" : playerPoints[i].houseName === "Reindeer" ? "🦌" : playerPoints[i].houseName === "Snowflake" ? "❄️" : "<:Grinch:783694623716802561>";
+          playerArray.push(`${i + 1}) ${houseEmoji} **${playerPoints[i].username}** - ${playerPoints[i].score} points`);
         }
 
       }
       else {
 
         for ( let i = 0; i < 10; i++ ) {
-          playerArray.push(`${i + 1}) **${playerPoints[i].username}** - ${playerPoints[i].score} points`);
+          const houseEmoji = playerPoints[i].houseName === "Snowman" ? "⛄" : playerPoints[i].houseName === "Elves" ? "🧝" : playerPoints[i].houseName === "Penguins" ? "🐧" : playerPoints[i].houseName === "Santa" ? "🎅" : playerPoints[i].houseName === "Reindeer" ? "🦌" : playerPoints[i].houseName === "Snowflake" ? "❄️" : "<:Grinch:783694623716802561>";
+          playerArray.push(`${i + 1}) ${houseEmoji} **${playerPoints[i].username}** - ${playerPoints[i].score} points`);
         }
 
       }
@@ -124,7 +126,8 @@ module.exports = {
       // Slap into strings
       let houseArray = [];
       for ( let i = 0; i < housePoints.length; i++ ) {
-        houseArray.push(`${i + 1}) **${housePoints[i].name}** - ${housePoints[i].score} total points`);
+        const houseEmoji = housePoints[i].name === "Snowman" ? "⛄" : housePoints[i].name === "Elves" ? "🧝" : housePoints[i].name === "Penguins" ? "🐧" : housePoints[i].name === "Santa" ? "🎅" : housePoints[i].name === "Reindeer" ? "🦌" : housePoints[i].name === "Snowflake" ? "❄️" : "<:Grinch:783694623716802561>";
+        houseArray.push(`${i + 1}) ${houseEmoji} **${housePoints[i].name}** - ${housePoints[i].score} total points`);
       }
 
 

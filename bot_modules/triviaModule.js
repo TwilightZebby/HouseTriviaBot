@@ -183,14 +183,16 @@ module.exports = {
         if ( tempScoresObject.length < 10 ) {
 
             for ( let i = 0; i < tempScoresObject.length; i++ ) {
-                roundResultsArray.push(`${i + 1}) **${tempScoresObject[i].username}**  -  ${tempScoresObject[i].score} points earnt`);
+                const houseEmoji = tempScoresObject[i].houseName === "Snowman" ? "⛄" : tempScoresObject[i].houseName === "Elves" ? "🧝" : tempScoresObject[i].houseName === "Penguins" ? "🐧" : tempScoresObject[i].houseName === "Santa" ? "🎅" : tempScoresObject[i].houseName === "Reindeer" ? "🦌" : tempScoresObject[i].houseName === "Snowflake" ? "❄️" : "<:Grinch:783694623716802561>";
+                roundResultsArray.push(`${i + 1}) ${houseEmoji} **${tempScoresObject[i].username}**  -  ${tempScoresObject[i].score} points earnt`);
             }
 
         }
         else {
 
             for ( let i = 0; i < 10; i++ ) {
-                roundResultsArray.push(`${i + 1}) **${tempScoresObject[i].username}**  -  ${tempScoresObject[i].score} points earnt`);
+                const houseEmoji = tempScoresObject[i].houseName === "Snowman" ? "⛄" : tempScoresObject[i].houseName === "Elves" ? "🧝" : tempScoresObject[i].houseName === "Penguins" ? "🐧" : tempScoresObject[i].houseName === "Santa" ? "🎅" : tempScoresObject[i].houseName === "Reindeer" ? "🦌" : tempScoresObject[i].houseName === "Snowflake" ? "❄️" : "<:Grinch:783694623716802561>";
+                roundResultsArray.push(`${i + 1}) ${houseEmoji} **${tempScoresObject[i].username}**  -  ${tempScoresObject[i].score} points earnt`);
             }
 
         }
@@ -224,7 +226,8 @@ module.exports = {
 
         let houseArray = [];
         for ( let i = 0; i < tempHouses.length; i++ ) {
-            houseArray.push(`${i + 1}) **${tempHouses[i].name}**  -  ${tempHouses[i].score} total points`);
+            const houseEmoji = tempHouses[i].name === "Snowman" ? "⛄" : tempHouses[i].name === "Elves" ? "🧝" : tempHouses[i].name === "Penguins" ? "🐧" : tempHouses[i].name === "Santa" ? "🎅" : tempHouses[i].name === "Reindeer" ? "🦌" : tempHouses[i].name === "Snowflake" ? "❄️" : "<:Grinch:783694623716802561>";
+            houseArray.push(`${i + 1}) ${houseEmoji} **${tempHouses[i].name}**  -  ${tempHouses[i].score} total points`);
         }
 
 
