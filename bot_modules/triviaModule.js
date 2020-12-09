@@ -334,8 +334,23 @@ module.exports = {
         delete embed; // free up cache
 
 
-        // Begin listening for answers
-        const filter = m => questionAnswers.includes(`${m.content.toLowerCase()}`) && !m.member.roles.cache.has(CONFIG.STAFFID);
+        // Filter for Message Collector
+        const filter = m => {
+            let isAnswerCorrect = false;
+
+            for ( let i = 0; i < questionAnswers.length; i++ ) {
+                if ( m.content.toLowerCase().includes(questionAnswers[i]) ) {
+                    isAnswerCorrect = true;
+                    break;
+                }
+            }
+
+            return isAnswerCorrect && !m.member.roles.cache.has(CONFIG.STAFFID);
+        }
+
+
+
+        // Begin listening for the correct answer
         const collector = channel.createMessageCollector(filter, { time: 20000, max: 10 });
         collector.on('collect', (message) => {
 
