@@ -329,7 +329,6 @@ module.exports = {
 
         // Ensure we don't get repeated questions
         while ( askedQuestions.includes(questionNumber) ) {
-            console.log("boop");
             questionNumber = Math.floor( ( Math.random() * qtemp.length ) + 1 );
         }
 
