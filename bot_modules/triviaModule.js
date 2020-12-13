@@ -13,8 +13,10 @@ const HOUSESCORES = require('../houseScores.json');
 const PLAYERSCORES = require('../playerScores.json');
 const TEMPSCORES = require('../roundScores.json');
 const EMPTYSCORES = require('../templates/templateJSON.json');
+
 let questionInterval;
 let delay = 50000;
+let askedQuestions = [ 0 ];
 
 // THIS MODULE
 module.exports = {
@@ -253,6 +255,7 @@ module.exports = {
         // free up cache
         delete playerEmbed;
         delete houseEmbed;
+        askedQuestions = [ 0 ]; // Empty Array
 
 
 
@@ -323,6 +326,13 @@ module.exports = {
 
         // Select a random question
         let questionNumber = Math.floor( ( Math.random() * qtemp.length ) + 1 );
+
+        // Ensure we don't get repeated questions
+        while ( askedQuestions.includes(questionNumber) ) {
+            console.log("boop");
+            questionNumber = Math.floor( ( Math.random() * qtemp.length ) + 1 );
+        }
+
         let chosenQuestion = QSTORE[`${questionNumber}`].question;
         let questionAnswers = QSTORE[`${questionNumber}`].answers;
 
@@ -333,8 +343,15 @@ module.exports = {
         .setTitle(`Question ${currentNumber}`)
         .setDescription(`${chosenQuestion}`);
 
+
+        // If there's an image attached
+        if ( QSTORE[`${questionNumber}`].image ) {
+            embed.setImage(QSTORE[`${questionNumber}`].image);
+        }
+
         await channel.send(embed);
         delete embed; // free up cache
+        askedQuestions.push(questionNumber);
 
 
         // Filter for Message Collector
@@ -355,7 +372,10 @@ module.exports = {
 
         // Begin listening for the correct answer
         const collector = channel.createMessageCollector(filter, { time: 20000, max: 10 });
-        collector.on('collect', (message) => {
+        collector.on('collect', async (message) => {
+
+            // Visual marker
+            await message.react('✅');
 
             if ( userAnswers.length === 10 ) {
                 return;
