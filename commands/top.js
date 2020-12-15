@@ -153,7 +153,7 @@ module.exports = {
 
       // Send to chat
       const embed = new Discord.MessageEmbed().setColor('GOLD')
-      .setTitle(`Winter Trivia Leaderboards`)
+      .setTitle(`Trivia Leaderboards`)
       .setDescription(`${message.member.displayName} - Rank \#${arrayIndex + 1} - ${authorScore} Points`)
       .addFields(
         {

@@ -1,4 +1,4 @@
-# Winter Trivia Bot
+# Trivia Bot
 *I couldn't think of a better name...*
 
 ---

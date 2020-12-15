@@ -1,7 +1,7 @@
 {
   "name": "wintertriviabot",
   "version": "1.0.0",
-  "description": "A small Winter themed Trivia Bot made for Dr1fterX's Discord in December 2020",
+  "description": "A small Trivia Bot made for Dr1fterX's Discord in December 2020",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
