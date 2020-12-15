@@ -54,7 +54,7 @@ module.exports = {
         },
         {
           name: `GitHub Link`,
-          value: `[github.com/TwilightZebby/WinterTriviaBot](https://github.com/TwilightZebby/WinterTriviaBot)`
+          value: `[github.com/TwilightZebby/TriviaBot](https://github.com/TwilightZebby/TriviaBot)`
         }
       );
 

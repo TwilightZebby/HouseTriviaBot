@@ -1,5 +1,5 @@
 {
-  "name": "wintertriviabot",
+  "name": "triviabot",
   "version": "1.0.0",
   "description": "A small Trivia Bot made for Dr1fterX's Discord in December 2020",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TwilightZebby/WinterTriviaBot.git"
+    "url": "git+https://github.com/TwilightZebby/TriviaBot.git"
   },
   "author": "TwilightZebby",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TwilightZebby/WinterTriviaBot/issues"
+    "url": "https://github.com/TwilightZebby/TriviaBot/issues"
   },
-  "homepage": "https://github.com/TwilightZebby/WinterTriviaBot#readme",
+  "homepage": "https://github.com/TwilightZebby/TriviaBot#readme",
   "dependencies": {
     "bufferutil": "^4.0.2",
     "discord.js": "^12.5.1",
