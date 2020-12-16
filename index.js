@@ -270,6 +270,12 @@ client.on('raw', async (evt) => {
 
 
 
+        case "start":
+            const StartCommand = client.commands.get("start");
+            return await StartCommand.execute(authorGuild, data, CommandData);
+
+
+
         default:
             return;
 
