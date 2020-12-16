@@ -113,7 +113,7 @@ module.exports = {
         client.api.applications(client.user.id).guilds(guild.id).commands().post({data});
 
     },
-    
+
 
 
 
@@ -136,8 +136,6 @@ module.exports = {
      * Registers the Slash Commands within Discord's Slash Command API
      * 
      * @param {Discord.Guild} guild 
-     * 
-     * @returns {Promise<Discord.Message>} wrapped Message
      */
     async RegisterCommands(guild) {
 
@@ -151,6 +149,45 @@ module.exports = {
         return;
 
     },
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Removes the Slash Commands from the Slash Command API when we don't need them in the Guild anymore
+     * 
+     * @param {Discord.Guild} guild 
+     */
+    async DeleteCommands(guild) {
+
+        let cachedCommands = await client.api.applications(client.user.id).guilds(guild.id).commands().get();
+
+        // Go through and remove all the commands
+        for (let i = 0; i < cachedCommands.length; i++) {
+            client.api.applications(client.user.id).guilds(guild.id).commands(cachedCommands[i].id).delete();
+        }
+        
+
+
+        return;
+
+    },
+
+
+
+
+
+
+
+
+
 
 
 

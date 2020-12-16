@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 
 // GLOBAL STUFF
 const { client } = require('./constants.js');
-const { PREFIX, TOKEN, HOSTIDS } = require('./config.js');
+const { PREFIX, TOKEN } = require('./config.js');
 
 
 
@@ -405,14 +405,18 @@ client.on('message', async message => {
         const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
         
         if (!command) {
-            
-            // No command found, check for only prefix
-            if ( matchedPrefix === `<@!${client.user.id}>` || matchedPrefix === `<@${client.user.id}>` ) {
-                return await message.channel.send(`${message.member.displayName}, my prefix is **${PREFIX}**`);
-            }
-
             return;
+        }
 
+
+
+
+
+        // Check to make sure Command is NOT a Slash Command
+        const regularCommands = [ "register", "deregister" ];
+        if ( !regularCommands.includes(command.name) )
+        {
+            return;
         }
 
 
@@ -451,12 +455,6 @@ client.on('message', async message => {
                         return await message.channel.send(`${message.member.displayName} sorry, but this command can only be used by TwilightZebby!`);
                     }
                     break;
-
-
-                case 'host':
-                    if ( !HOSTIDS.includes(message.author.id) ) {
-                        return await message.channel.send(`${message.member.displayName} sorry, but this command can only be used by Trivia Round Hosts!`);
-                    }
 
 
                 // Just in case
