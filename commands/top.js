@@ -41,10 +41,16 @@ module.exports = {
     /**
      * Command's functionality
      * 
-     * @param {Discord.Message} message 
-     * @param {Array<String>} args 
+     * @param {Discord.Guild} guild 
+     * @param {*} data
+     * @param {*} commandData 
      */
-    async execute(message, args) {
+    async execute(guild, data, commandData) {
+
+      // IMPORT MODULE
+      const SlashCommands = client.modules.get("slashModule");
+
+
 
       // Bring in points stores
       const playerPoints = Object.values(PLAYERSCORES);
@@ -133,12 +139,13 @@ module.exports = {
 
 
       // Grab Author's current ranking
+      let authorMember = await guild.members.fetch(data.member.user.id);
       let arrayIndex = 0;
       let authorScore;
 
       for ( arrayIndex; arrayIndex < playerPoints.length; arrayIndex++ ) {
         
-        if ( playerPoints[arrayIndex].id === message.author.id ) {
+        if ( playerPoints[arrayIndex].id === authorMember.user.id ) {
           authorScore = playerPoints[arrayIndex].score;
           break;
         }
@@ -154,7 +161,7 @@ module.exports = {
       // Send to chat
       const embed = new Discord.MessageEmbed().setColor('GOLD')
       .setTitle(`Trivia Leaderboards`)
-      .setDescription(`${message.member.displayName} - Rank \#${arrayIndex + 1} - ${authorScore} Points`)
+      .setDescription(`${authorMember.displayName} - Rank \#${arrayIndex + 1} - ${authorScore} Points`)
       .addFields(
         {
           name: `Top 10 Users`,
@@ -166,7 +173,8 @@ module.exports = {
         }
       );
 
-      await message.channel.send(embed);
+      //await message.channel.send(embed);
+      await SlashCommands.Callback(data, ``, embed);
       delete embed; // free up cache
       return;
 

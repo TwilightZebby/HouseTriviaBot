@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 
 // GLOBAL STUFF
 const { client } = require('./constants.js');
-const { PREFIX, TOKEN, HOSTIDS } = require('./config.js');
+const { PREFIX, TOKEN } = require('./config.js');
 
 
 
@@ -227,6 +227,92 @@ client.once('ready', async () => {
 
 
 
+// Bring in Module
+const SlashCommands = client.modules.get("slashModule");
+
+client.on('raw', async (evt) => {
+
+    if (evt.t !== 'INTERACTION_CREATE') {
+        return;
+    }
+
+    const {d: data} = evt;
+
+
+    if (data.type !== 2) {
+        return;
+    }
+
+
+    const CommandData = data.data;
+
+    // Fetch Guild
+    const authorGuild = await client.guilds.fetch(data["guild_id"]);
+
+
+    switch (CommandData.name) {
+
+        case "ping":
+            const PingCommand = client.commands.get("ping");
+            return await PingCommand.execute(authorGuild, data, CommandData);
+
+
+
+        case "info":
+            const InfoCommand = client.commands.get("info");
+            return await InfoCommand.execute(authorGuild, data, CommandData);
+
+
+
+        case "top":
+            const TopCommand = client.commands.get("top");
+            return await TopCommand.execute(authorGuild, data, CommandData);
+
+
+
+        case "start":
+            const StartCommand = client.commands.get("start");
+            return await StartCommand.execute(authorGuild, data, CommandData);
+
+
+
+        default:
+            return;
+
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -319,14 +405,18 @@ client.on('message', async message => {
         const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
         
         if (!command) {
-            
-            // No command found, check for only prefix
-            if ( matchedPrefix === `<@!${client.user.id}>` || matchedPrefix === `<@${client.user.id}>` ) {
-                return await message.channel.send(`${message.member.displayName}, my prefix is **${PREFIX}**`);
-            }
-
             return;
+        }
 
+
+
+
+
+        // Check to make sure Command is NOT a Slash Command
+        const regularCommands = [ "register", "deregister" ];
+        if ( !regularCommands.includes(command.name) )
+        {
+            return;
         }
 
 
@@ -365,12 +455,6 @@ client.on('message', async message => {
                         return await message.channel.send(`${message.member.displayName} sorry, but this command can only be used by TwilightZebby!`);
                     }
                     break;
-
-
-                case 'host':
-                    if ( !HOSTIDS.includes(message.author.id) ) {
-                        return await message.channel.send(`${message.member.displayName} sorry, but this command can only be used by Trivia Round Hosts!`);
-                    }
 
 
                 // Just in case

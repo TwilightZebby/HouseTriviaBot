@@ -4,16 +4,16 @@ const Discord = require("discord.js");
 
 // VARIABLE IMPORTS
 const { client } = require('../constants.js');
-let { PREFIX } = require('../config.js');
-
-// MODULE IMPORTS, IF ANY
-
+const { PREFIX } = require('../config.js');
 
 // THIS COMMAND
 module.exports = {
-    name: 'ping',
-    description: 'Returns your average ping to the Bot in milliseconds',
-    usage: [ `${PREFIX}ping ` ],
+    name: 'register',
+    description: 'Registers all the publically usable commands in this Bot onto Discord\'s Slash Command API for this Server',
+
+    // Usage(s)
+    //     - Using an Array just in case there's multiple usages
+    usage: [ `${PREFIX}register ` ],
 
     // Type of Command
     //     - Use 'general' if not in a sub-folder within .\commands\
@@ -29,29 +29,29 @@ module.exports = {
     //     'twilightzebby' - Only TwilightZebby#1955 can use this command
     //     'host' - Only the Round Hosts can use this command. Round Hosts are listed by USER IDs in the hidden .\config.js file
     //     If commented out, everyone can use this command
-    //limitation: 'twilightzebby',
+    limitation: 'twilightzebby',
 
     // Command's cooldown, in seconds
-    cooldown: 10,
+    cooldown: 600,
 
     /**
      * Command's functionality
      * 
-     * @param {Discord.Guild} guild 
-     * @param {*} data
-     * @param {*} commandData
+     * @param {Discord.Message} message 
+     * @param {Array<String>} args 
      */
-    async execute(guild, data, commandData) {
+    async execute(message, args) {
 
       // MODULE IMPORTS
       const SlashCommands = client.modules.get("slashModule");
+      
+
 
 
 
       
-      // Fetch the User
-      let authorMember = await guild.members.fetch(data.member.user.id);
-      return await SlashCommands.Callback(data, `${authorMember.displayName}, Your ping is ${authorMember.client.ws.ping.toFixed(2)}ms`);
+      await SlashCommands.RegisterCommands(message.guild);
+      return console.log(`Successfully registered all Slash Commands into ${message.guild.name}`);
 
       //END OF COMMAND
     },

@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 // VARIABLE IMPORTS
 const { client } = require('../constants.js');
-const { PREFIX } = require('../config.js');
+const { PREFIX, HOSTIDS } = require('../config.js');
 
 // THIS COMMAND
 module.exports = {
@@ -37,20 +37,29 @@ module.exports = {
     /**
      * Command's functionality
      * 
-     * @param {Discord.Message} message 
-     * @param {Array<String>} args 
+     * @param {Discord.Guild} guild 
+     * @param {*} data
+     * @param {*} commandData 
      */
-    async execute(message, args) {
+    async execute(guild, data, commandData) {
 
-      // MODULE IMPORTS, IF ANY
+      // MODULE IMPORTS
       const Trivia = client.modules.get("triviaModule");
+      const SlashCommands = client.modules.get("slashModule");
       
 
 
 
 
-      
-      return await Trivia.Main(message);
+      const member = await guild.members.fetch(data.member.user.id);
+
+      // check if they have the permissions to use this command
+      if ( !HOSTIDS.includes(member.user.id) ) {
+        return await SlashCommands.Callback(data, `Sorry **${member.displayName}**, but you do not have the Permissions to start a Trivia Round...`);
+      }
+      else {
+        return await Trivia.Main(guild, data, commandData, member);
+      }
 
       //END OF COMMAND
     },
