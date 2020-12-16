@@ -249,8 +249,30 @@ client.on('raw', async (evt) => {
     // Fetch Guild
     const authorGuild = await client.guilds.fetch(data["guild_id"]);
 
-    if (CommandData.name === "ping") {
-        return await SlashCommands.Ping(authorGuild, data, CommandData);
+
+    switch (CommandData.name) {
+
+        case "ping":
+            const PingCommand = client.commands.get("ping");
+            return await PingCommand.execute(authorGuild, data, CommandData);
+
+
+
+        case "info":
+            const InfoCommand = client.commands.get("info");
+            return await InfoCommand.execute(authorGuild, data, CommandData);
+
+
+
+        case "top":
+            const TopCommand = client.commands.get("top");
+            return await TopCommand.execute(authorGuild, data, CommandData);
+
+
+
+        default:
+            return;
+
     }
 
 });

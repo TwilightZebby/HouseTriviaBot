@@ -37,12 +37,21 @@ module.exports = {
     /**
      * Command's functionality
      * 
-     * @param {Discord.Message} message 
-     * @param {Array<String>} args 
+     * @param {Discord.Guild} guild 
+     * @param {*} data
+     * @param {*} commandData
      */
-    async execute(message, args) {
+    async execute(guild, data, commandData) {
+
+      // MODULE IMPORTS
+      const SlashCommands = client.modules.get("slashModule");
+
+
+
       
-      return await message.channel.send(`Pong!\n> Your ping is ${message.client.ws.ping.toFixed(2)}ms`);
+      // Fetch the User
+      let authorMember = await guild.members.fetch(data.member.user.id);
+      return await SlashCommands.Callback(data, `${authorMember.displayName}, Your ping is ${authorMember.client.ws.ping.toFixed(2)}ms`);
 
       //END OF COMMAND
     },

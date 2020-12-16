@@ -37,16 +37,22 @@ module.exports = {
     /**
      * Command's functionality
      * 
-     * @param {Discord.Message} message 
-     * @param {Array<String>} args 
+     * @param {Discord.Guild} guild 
+     * @param {*} data
+     * @param {*} commandData 
      */
-    async execute(message, args) {
+    async execute(guild, data, commandData) {
+
+      // IMPORT MODULE
+      const SlashCommands = client.modules.get("slashModule");
+
+
 
       // Embed time!
       const embed = new Discord.MessageEmbed().setColor('#008bb5')
       .addFields(
         {
-          name: `${client.user.bot} Information`,
+          name: `${client.user.username} Information`,
           value: `This Bot was made by TwilightZebby#1955 for use as a Inter-House Contest during December 2020.
           It features a wise range of questions, from video games to anime, science to maths, and even a few silly questions about this community!
           Zebby has made this Bot open-source for those who understand JavaScript/NodeJS and like to read code :P`
@@ -57,7 +63,8 @@ module.exports = {
         }
       );
 
-      await message.channel.send(embed);
+      //await message.channel.send(embed);
+      await SlashCommands.Callback(data, ``, embed);
       delete embed; // free up cache
       return;
 

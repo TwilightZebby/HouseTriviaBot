@@ -42,22 +42,78 @@ module.exports = {
     },
 
 
+
+
+
     /**
-     * Listens for the Ping Slash Command
+     * Registers the Info Slash Command
      * 
      * @param {Discord.Guild} guild 
-     * @param {*} data
-     * @param {*} commandData
      * 
      * @returns {Promise<Discord.Message>} wrapped Message
      */
-    async Ping(guild, data, commandData) {
+    async RegisterInfo(guild) {
 
-        // Fetch the User
-        let authorMember = await guild.members.fetch(data.member.user.id);
-        return await this.Callback(data, `${authorMember.displayName}, Your ping is ${authorMember.client.ws.ping.toFixed(2)}ms`);
+        // Data
+        const data = {};
+        data.name = "info";
+        data.description = "Brings up basic information about this Bot";
+
+        client.api.applications(client.user.id).guilds(guild.id).commands().post({data});
 
     },
+
+
+
+
+
+
+
+
+    /**
+     * Registers the Top Slash Command
+     * 
+     * @param {Discord.Guild} guild 
+     * 
+     * @returns {Promise<Discord.Message>} wrapped Message
+     */
+    async RegisterTop(guild) {
+
+        // Data
+        const data = {};
+        data.name = "top";
+        data.description = "Shows the current User and House rankings, including your own";
+
+        client.api.applications(client.user.id).guilds(guild.id).commands().post({data});
+
+    },
+
+
+
+
+
+
+
+
+
+    /**
+     * Registers the Start Slash Command
+     * 
+     * @param {Discord.Guild} guild 
+     * 
+     * @returns {Promise<Discord.Message>} wrapped Message
+     */
+    async RegisterStart(guild) {
+
+        // Data
+        const data = {};
+        data.name = "start";
+        data.description = "Starts a Trivia Round. Can only be used by selected Round Hosts";
+
+        client.api.applications(client.user.id).guilds(guild.id).commands().post({data});
+
+    },
+    
 
 
 
@@ -87,6 +143,9 @@ module.exports = {
 
         // Go through and register all the commands
         await this.RegisterPing(guild);
+        await this.RegisterInfo(guild);
+        await this.RegisterTop(guild);
+        await this.RegisterStart(guild);
 
 
         return;
@@ -100,15 +159,23 @@ module.exports = {
 
 
 
-    
-    async Callback(eventData, message) {
+    /**
+     * Responds to a Slash Command Interaction
+     * 
+     * @param {*} eventData
+     * @param {String} message
+     * @param {Discord.MessageEmbed} [embed]
+     * 
+     * @returns {Promise<Discord.Message>} wrapped Message
+     */
+    async Callback(eventData, message, embed) {
 
         const data = {
             "type": "4",
             "data": {
                 "tts": false,
                 "content": message,
-                "embeds": [],
+                "embeds": embed === undefined ? [] : [embed],
                 "allowed_mentions": []
             }
         };
