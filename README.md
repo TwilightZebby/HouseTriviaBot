@@ -29,4 +29,4 @@ Additionally, the Bot will also know which Winter House/Role that User is in, an
 ### Can I invite this Bot to my own Server?
 > Nope. Sorry!
 > 
-> I made this Bot for use in Dr1fterX's Discord only (so quite a few things are hard-coded in). Also, I won't be keeping this Bot online 24/7 - only while we require the use of it :)
+> I made this Bot for use in Dr1fterX's Discord only. Also, I won't be keeping this Bot online 24/7 - only while we require the use of it :)
