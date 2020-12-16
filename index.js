@@ -227,6 +227,64 @@ client.once('ready', async () => {
 
 
 
+// Bring in Module
+const SlashCommands = client.modules.get("slashModule");
+
+client.on('raw', async (evt) => {
+
+    if (evt.t !== 'INTERACTION_CREATE') {
+        return;
+    }
+
+    const {d: data} = evt;
+
+
+    if (data.type !== 2) {
+        return;
+    }
+
+
+    const CommandData = data.data;
+
+    // Fetch Guild
+    const authorGuild = await client.guilds.fetch(data["guild_id"]);
+
+    if (CommandData.name === "ping") {
+        return await SlashCommands.Ping(authorGuild, data, CommandData);
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

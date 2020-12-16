@@ -344,6 +344,7 @@ module.exports = {
                             name: `Limitation`,
                             value: `\u200B Can only be used by TwilightZebby#1955`
                         });
+                        break;
 
 
 
@@ -352,6 +353,7 @@ module.exports = {
                             name: `Limitation`,
                             value: `\u200B Can only be used by Trivia Round Hosts`
                         });
+                        break;
 
 
 
