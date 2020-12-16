@@ -325,11 +325,11 @@ module.exports = {
 
 
         // Select a random question
-        let questionNumber = Math.floor( ( Math.random() * qtemp.length ) + 1 );
+        let questionNumber = Math.floor( ( Math.random() * (qtemp.length + 1) ) + 1 );
 
         // Ensure we don't get repeated questions
         while ( askedQuestions.includes(questionNumber) ) {
-            questionNumber = Math.floor( ( Math.random() * qtemp.length ) + 1 );
+            questionNumber = Math.floor( ( Math.random() * (qtemp.length + 1) ) + 1 );
         }
 
         let chosenQuestion = QSTORE[`${questionNumber}`].question;
