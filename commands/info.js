@@ -44,10 +44,9 @@ module.exports = {
 
       // Embed time!
       const embed = new Discord.MessageEmbed().setColor('#008bb5')
-      .setTitle(`${client.user.username} Information`)
       .addFields(
         {
-          name: `\u200B`,
+          name: `${client.user.bot} Information`,
           value: `This Bot was made by TwilightZebby#1955 for use as a Inter-House Contest during December 2020.
           It features a wise range of questions, from video games to anime, science to maths, and even a few silly questions about this community!
           Zebby has made this Bot open-source for those who understand JavaScript/NodeJS and like to read code :P`
