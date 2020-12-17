@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 // VARIABLE IMPORTS
 const { client } = require('../constants.js');
-const { PREFIX } = require('../config.js');
+const { PREFIX, NOTFESTIVEID } = require('../config.js');
 
 // JSON IMPORTS
 const PLAYERSCORES = require('../playerScores.json');
@@ -101,6 +101,16 @@ module.exports = {
         
         // No Arguments, fetch author's points
         const authorMember = await guild.members.fetch(data.member.user.id);
+
+
+        // Check for NOT FESTIVE Role
+        if ( authorMember.roles.cache.has(NOTFESTIVEID) ) {
+          return await SlashCommands.Callback(data, `Sorry, but you cannot use this command since you are not in a Winter House Role. Please see <#284431777408483328> for how to assign yourself into a Winter House.`);
+        }
+
+
+
+
         let arrayIndex = 0;
         let authorScore;
         let houseColour;
@@ -158,6 +168,16 @@ module.exports = {
 
         // Argument was passed, fetch points for given User instead
         const member = await guild.members.fetch(commandData.options[0].value);
+
+        // Check for NOT FESTIVE Role
+        if ( member.roles.cache.has(NOTFESTIVEID) ) {
+          return await SlashCommands.Callback(data, `Sorry, but ${member.displayName} is not in a Winter House Role, as such I do not have any points stored for them.`);
+        }
+
+
+
+
+
         let arrayIndex = 0;
         let memberScore;
         let houseColour;

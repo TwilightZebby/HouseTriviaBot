@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 // VARIABLE IMPORTS
 const { client } = require('../constants.js');
-const { PREFIX } = require('../config.js');
+const { PREFIX, NOTFESTIVEID } = require('../config.js');
 
 // JSON IMPORTS
 const PLAYERSCORES = require('../playerScores.json');
@@ -138,31 +138,45 @@ module.exports = {
 
 
 
+      const embed = new Discord.MessageEmbed().setColor('GOLD')
+      .setTitle(`Trivia Leaderboards`);
+
+
+
       // Grab Author's current ranking
       let authorMember = await guild.members.fetch(data.member.user.id);
-      let arrayIndex = 0;
-      let authorScore;
 
-      for ( arrayIndex; arrayIndex < playerPoints.length; arrayIndex++ ) {
+      // Check for NOT FESTIVE Role
+      if ( !authorMember.roles.cache.has(NOTFESTIVEID) ) {
         
-        if ( playerPoints[arrayIndex].id === authorMember.user.id ) {
-          authorScore = playerPoints[arrayIndex].score;
-          break;
+        let arrayIndex = 0;
+        let authorScore;
+
+        for ( arrayIndex; arrayIndex < playerPoints.length; arrayIndex++ ) {
+        
+          if ( playerPoints[arrayIndex].id === authorMember.user.id ) {
+            authorScore = playerPoints[arrayIndex].score;
+            break;
+         }
+          else {
+            continue;
+          }
+
         }
-        else {
-          continue;
-        }
+
+
+        embed.setDescription(`${authorMember.displayName} - Rank \#${arrayIndex + 1} - ${authorScore} Points`);
 
       }
+
+
+      
 
 
 
 
       // Send to chat
-      const embed = new Discord.MessageEmbed().setColor('GOLD')
-      .setTitle(`Trivia Leaderboards`)
-      .setDescription(`${authorMember.displayName} - Rank \#${arrayIndex + 1} - ${authorScore} Points`)
-      .addFields(
+      embed.addFields(
         {
           name: `Top 10 Users`,
           value: playerArray.join(`\n`)
