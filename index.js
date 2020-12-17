@@ -276,6 +276,12 @@ client.on('raw', async (evt) => {
 
 
 
+        case "points":
+            const PointsCommand = client.commands.get("points");
+            return await PointsCommand.execute(authorGuild, data, CommandData);
+
+
+
         default:
             return;
 

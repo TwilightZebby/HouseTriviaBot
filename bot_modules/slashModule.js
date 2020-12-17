@@ -123,6 +123,43 @@ module.exports = {
 
 
 
+    /**
+     * Registers the Points Slash Command
+     * 
+     * @param {Discord.Guild} guild 
+     * 
+     * @returns {Promise<Discord.Message>} wrapped Message
+     */
+    async RegisterPoints(guild) {
+
+        // Data
+        const data = {};
+        data.name = "points";
+        data.description = "Shows how many points you have earnt";
+        data.options = new Array();
+
+        // Options
+        const option = {};
+        option.name = "user";
+        option.description = "Mention a User to see their points instead";
+        option.type = 6; // User
+        option.required = false;
+
+        data.options.push(option);
+
+        client.api.applications(client.user.id).guilds(guild.id).commands().post({data});
+
+    },
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -144,6 +181,7 @@ module.exports = {
         await this.RegisterInfo(guild);
         await this.RegisterTop(guild);
         await this.RegisterStart(guild);
+        await this.RegisterPoints(guild);
 
 
         return;
