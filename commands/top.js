@@ -146,8 +146,10 @@ module.exports = {
       // Grab Author's current ranking
       let authorMember = await guild.members.fetch(data.member.user.id);
 
+
+
       // Check for NOT FESTIVE Role
-      if ( !authorMember.roles.cache.has(NOTFESTIVEID) ) {
+      if ( !authorMember.roles.cache.has(NOTFESTIVEID) && PLAYERSCORES[authorMember.user.id] !== undefined ) {
         
         let arrayIndex = 0;
         let authorScore;

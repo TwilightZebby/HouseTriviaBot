@@ -111,6 +111,16 @@ module.exports = {
 
 
 
+
+
+        // Check Scores Store
+        if ( !PLAYERSCORES[authorMember.user.id] ) {
+          return await SlashCommands.Callback(data, `You haven't earnt any points yet!`);
+        }
+
+
+
+
         let arrayIndex = 0;
         let authorScore;
         let houseColour;
@@ -172,6 +182,15 @@ module.exports = {
         // Check for NOT FESTIVE Role
         if ( member.roles.cache.has(NOTFESTIVEID) ) {
           return await SlashCommands.Callback(data, `Sorry, but ${member.displayName} is not in a Winter House Role, as such I do not have any points stored for them.`);
+        }
+
+
+
+
+
+        // Check Scores Stores
+        if ( !PLAYERSCORES[member.user.id] ) {
+          return await SlashCommands.Callback(data, `${member.displayName} has yet to earn any points!`);
         }
 
 
