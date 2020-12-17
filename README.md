@@ -30,3 +30,16 @@ Additionally, the Bot will also know which Winter House/Role that User is in, an
 > Nope. Sorry!
 > 
 > I made this Bot for use in Dr1fterX's Discord only. Also, I won't be keeping this Bot online 24/7 - only while we require the use of it :)
+
+
+### Why is there not a Help Command / Why was the Help Command removed?
+> Because Discord recently released their custom [Slash Command API](https://discord.com/developers/docs/interactions/slash-commands), and since you can also have command descriptions on those, I decided to use that and remove the Help Command since it's no longer needed
+
+
+### What are the Register/Deregister Commands for?
+> They still use the Bot's `t?` prefix since they wouldn't work as a Slash Command (see above).
+> 
+> The `register` command is for registering this Bot's Slash Commands onto the Guild the CMD is used in.
+> The `deregister` command does the reverse, it removed those registered Slash Commands from the Guild.
+>
+> I decided to use [Guild Slash Commands](https://discord.com/developers/docs/interactions/slash-commands#registering-a-command) instead of Global Slash Commands because then I could 'hide' the Bot when we are not using it for Speed-Trivia Rounds (since Guild Slash Commands update almost instantly; while Global Commands update within 1 hour)
