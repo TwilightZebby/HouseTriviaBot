@@ -373,7 +373,8 @@ module.exports = {
                 }
             }
 
-            return isAnswerCorrect && !m.member.roles.cache.has(CONFIG.STAFFID);
+            //return isAnswerCorrect && !m.member.roles.cache.has(CONFIG.STAFFID); // This is for STAFF ROLE check
+            return isAnswerCorrect && !CONFIG.HOUSELEADERIDS.includes(m.member.user.id); // This is for specific House Leads
         }
 
 
