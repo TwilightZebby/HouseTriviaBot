@@ -165,6 +165,58 @@ module.exports = {
 
 
 
+    /**
+     * Registers the Submit Slash Command
+     * 
+     * @param {Discord.Guild} guild 
+     * 
+     * @returns {Promise<Discord.Message>} wrapped Message
+     */
+    async RegisterSubmit(guild) {
+
+        // Data
+        const data = {};
+        data.name = "submit";
+        data.description = "Submit a question & answer to be added to the Bot";
+        data.options = new Array();
+
+        // Options
+        const option = {};
+        option.name = "question";
+        option.description = "The Question to be asked";
+        option.type = 3; // String
+        option.required = true;
+
+        data.options.push(option);
+
+
+        const secondOption = {};
+        secondOption.name = "answer";
+        secondOption.description = "The answer to the Question";
+        secondOption.type = 3; // String
+        secondOption.required = true;
+
+        data.options.push(secondOption);
+
+
+        client.api.applications(client.user.id).guilds(guild.id).commands().post({data});
+
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -182,6 +234,7 @@ module.exports = {
         await this.RegisterTop(guild);
         await this.RegisterStart(guild);
         await this.RegisterPoints(guild);
+        await this.RegisterSubmit(guild);
 
 
         return;

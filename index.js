@@ -282,6 +282,12 @@ client.on('raw', async (evt) => {
 
 
 
+        case "submit":
+            const SubmitCommand = client.commands.get("submit");
+            return await SubmitCommand.execute(authorGuild, data, CommandData);
+
+
+
         default:
             return;
 
