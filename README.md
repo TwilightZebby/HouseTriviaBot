@@ -5,7 +5,7 @@
 
 ## Information
 
-This is just a small little Trivia Bot made by TwilightZebby for use on Dr1fterX's [Discord Server](https://discord.gg/2d8ZVzs). (He's a [twitch streamer](https://twitch.tv/Dr1fterX))
+This is just a small little Trivia Bot made by TwilightZebby for use on Dr1fterX's [Discord Server](https://discord.gg/URH5E34FZf). (He's a [twitch streamer](https://twitch.tv/Dr1fterX))
 
 Every December, he sets up about 7 Winter Houses (Roles) that we can self-assign for a little fun. I thought that this year (2020) we could have an inter-House competition. This is where this Discord Bot comes in!
 
