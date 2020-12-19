@@ -265,18 +265,21 @@ client.on('raw', async (evt) => {
 
 
         case "top":
+            if ( authorGuild.id === "720258928470130760" ) { return; } // Prevent stable version of Bot from working on Testing Server because config stuff
             const TopCommand = client.commands.get("top");
             return await TopCommand.execute(authorGuild, data, CommandData);
 
 
 
         case "start":
+            if ( authorGuild.id === "720258928470130760" ) { return; } // Prevent stable version of Bot from working on Testing Server because config stuff
             const StartCommand = client.commands.get("start");
             return await StartCommand.execute(authorGuild, data, CommandData);
 
 
 
         case "points":
+            if ( authorGuild.id === "720258928470130760" ) { return; } // Prevent stable version of Bot from working on Testing Server because config stuff
             const PointsCommand = client.commands.get("points");
             return await PointsCommand.execute(authorGuild, data, CommandData);
 
