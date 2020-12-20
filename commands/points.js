@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 // VARIABLE IMPORTS
 const { client } = require('../constants.js');
-const { PREFIX, NOTFESTIVEID } = require('../config.js');
+const { PREFIX, NOTFESTIVEID, HOUSELEADERIDS } = require('../config.js');
 
 // JSON IMPORTS
 const PLAYERSCORES = require('../playerScores.json');
@@ -111,6 +111,14 @@ module.exports = {
 
 
 
+        // Special message for House Leads
+        if ( HOUSELEADERIDS.includes(authorMember.user.id) ) {
+          return await SlashCommands.Callback(data, `Sorry, but the House Leads cannot earn points, just to be fair to everyone!`);
+        }
+
+
+
+
 
 
         // Check Scores Store
@@ -182,6 +190,14 @@ module.exports = {
         // Check for NOT FESTIVE Role
         if ( member.roles.cache.has(NOTFESTIVEID) ) {
           return await SlashCommands.Callback(data, `Sorry, but ${member.displayName} is not in a Winter House Role, as such I do not have any points stored for them.`);
+        }
+
+
+
+
+        // Special message for House Leads
+        if ( HOUSELEADERIDS.includes(member.user.id) ) {
+          return await SlashCommands.Callback(data, `Sorry, ${member.displayName} is one of the House Leads, and as such they cannot earn points!`);
         }
 
 
