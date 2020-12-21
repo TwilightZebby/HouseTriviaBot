@@ -51,7 +51,9 @@ module.exports = {
 
       
       await SlashCommands.RegisterCommands(message.guild);
-      return console.log(`Successfully registered all Slash Commands into ${message.guild.name}`);
+      console.log(`Successfully registered all Slash Commands into ${message.guild.name}`);
+
+      return await message.react('👍');
 
       //END OF COMMAND
     },

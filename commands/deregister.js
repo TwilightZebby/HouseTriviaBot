@@ -51,7 +51,9 @@ module.exports = {
 
       
       await SlashCommands.DeleteCommands(message.guild);
-      return console.log(`Successfully removed Slash Commands from ${message.guild.name}`);
+      console.log(`Successfully removed Slash Commands from ${message.guild.name}`);
+
+      return await message.react('👍');
 
       //END OF COMMAND
     },
