@@ -264,7 +264,7 @@ module.exports = {
         // free up cache
         delete playerEmbed;
         delete houseEmbed;
-        askedQuestions = [ 0 ]; // Empty Array
+        //askedQuestions = [ 0 ]; // Empty Array, comment out to have unique questions across the *whole* thing and not just a single round
 
 
 

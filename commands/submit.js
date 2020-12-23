@@ -44,7 +44,6 @@ module.exports = {
     async execute(guild, data, commandData) {
 
       // MODULE IMPORTS
-      const Errors = client.modules.get("errorLogger");
       const SlashCommands = client.modules.get("slashModule");
       
 
@@ -54,7 +53,6 @@ module.exports = {
       
       // Fetch Channels
       const suggestionChannel = (await client.guilds.fetch("720258928470130760")).channels.resolve("789430706581012560");
-      const authorChannel = guild.channels.resolve(data["channel_id"]);
 
       // Fetch Author
       const authorMember = await guild.members.fetch(data.member.user.id);
@@ -68,7 +66,7 @@ module.exports = {
       await suggestionChannel.send(`${authorMember.user.username}#${authorMember.user.discriminator} submitted the following Q & A:\n\`\`\`QUESTION: ${questionData.value}\nANSWER: ${answerData.value}\`\`\``);
 
       // Send Response back to Author
-      return await authorChannel.send(`**${authorMember.displayName}** - your Question & Answer have been submitted!`);
+      return await SlashCommands.HungryCallback(data, `**${authorMember.displayName}** - your Question & Answer have been submitted!`);
 
 
 

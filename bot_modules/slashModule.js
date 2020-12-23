@@ -310,6 +310,44 @@ module.exports = {
 
         client.api.interactions(eventData.id)[eventData.token].callback().post({data});
 
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Responds to a Slash Command Interaction EATING THE USER's INPUT
+     * 
+     * @param {*} eventData
+     * @param {String} message
+     * @param {Discord.MessageEmbed} [embed]
+     * 
+     * @returns {Promise<Discord.Message>} wrapped Message
+     */
+    async HungryCallback(eventData, message, embed) {
+
+        const data = {
+            "type": "3",
+            "data": {
+                "tts": false,
+                "content": message,
+                "embeds": embed === undefined ? [] : [embed],
+                "allowed_mentions": []
+            }
+        };
+
+        client.api.interactions(eventData.id)[eventData.token].callback().post({data});
+
     }
 
 };
