@@ -27,9 +27,9 @@ module.exports = {
 
     // LIMITATIONS
     //     'twilightzebby' - Only TwilightZebby#1955 can use this command
-    //     'host' - Only the Round Hosts can use this command. Round Hosts are listed by USER IDs in the hidden .\config.js file
+    //     'hosts' - Only the Round Hosts can use this command. Round Hosts are listed by USER IDs in the hidden .\config.js file
     //     If commented out, everyone can use this command
-    limitation: 'twilightzebby',
+    limitation: 'hosts',
 
     // Command's cooldown, in seconds
     cooldown: 600,

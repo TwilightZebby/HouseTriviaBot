@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 
 // GLOBAL STUFF
 const { client } = require('./constants.js');
-const { PREFIX, TOKEN } = require('./config.js');
+const { PREFIX, TOKEN, HOSTIDS } = require('./config.js');
 
 
 
@@ -461,6 +461,14 @@ client.on('message', async message => {
                 case 'twilightzebby':
                     if ( message.author.id !== "156482326887530498" ) {
                         return await message.channel.send(`${message.member.displayName} sorry, but this command can only be used by TwilightZebby!`);
+                    }
+                    break;
+
+
+
+                case "hosts":
+                    if ( !HOSTIDS.includes(message.author.id) ) {
+                        return await message.channel.send(`${message.member.displayName} sorry, but this command can only be used by selected Round Hosts`);
                     }
                     break;
 
