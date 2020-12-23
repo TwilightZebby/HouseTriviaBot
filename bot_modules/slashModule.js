@@ -96,32 +96,6 @@ module.exports = {
 
 
 
-    /**
-     * Registers the Start Slash Command
-     * 
-     * @param {Discord.Guild} guild 
-     * 
-     * @returns {Promise<Discord.Message>} wrapped Message
-     */
-    async RegisterStart(guild) {
-
-        // Data
-        const data = {};
-        data.name = "start";
-        data.description = "Starts a Trivia Round. Can only be used by selected Round Hosts";
-
-        client.api.applications(client.user.id).guilds(guild.id).commands().post({data});
-
-    },
-
-
-
-
-
-
-
-
-
 
     /**
      * Registers the Points Slash Command
@@ -232,7 +206,6 @@ module.exports = {
         await this.RegisterPing(guild);
         await this.RegisterInfo(guild);
         await this.RegisterTop(guild);
-        await this.RegisterStart(guild);
         await this.RegisterPoints(guild);
         await this.RegisterSubmit(guild);
 

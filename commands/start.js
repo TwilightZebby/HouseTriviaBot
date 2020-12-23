@@ -37,29 +37,16 @@ module.exports = {
     /**
      * Command's functionality
      * 
-     * @param {Discord.Guild} guild 
-     * @param {*} data
-     * @param {*} commandData 
+     * @param {Discord.Message} message 
+     * @param {Array<String>} args
      */
-    async execute(guild, data, commandData) {
+    async execute(message, args) {
 
       // MODULE IMPORTS
       const Trivia = client.modules.get("triviaModule");
-      const SlashCommands = client.modules.get("slashModule");
       
-
-
-
-
-      const member = await guild.members.fetch(data.member.user.id);
-
-      // check if they have the permissions to use this command
-      if ( !HOSTIDS.includes(member.user.id) ) {
-        return await SlashCommands.Callback(data, `Sorry **${member.displayName}**, but you do not have the Permissions to start a Trivia Round...`);
-      }
-      else {
-        return await Trivia.Main(guild, data, commandData, member);
-      }
+      
+      return await Trivia.Main(message);
 
       //END OF COMMAND
     },

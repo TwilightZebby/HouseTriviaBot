@@ -26,22 +26,14 @@ module.exports = {
     /**
      * Handles the main functions of Trivia Rounds
      * 
-     * @param {Discord.Guild} guild 
-     * @param {*} data
-     * @param {*} commandData
-     * @param {Discord.GuildMember} member
+     * @param {Discord.Message} message 
      * 
      * @returns {Promise<Discord.Message>} wrapped Message
      */
-    async Main(guild, data, commandData, member) {
-
-        // MODULE IMPORTS
-        const SlashCommands = client.modules.get("slashModule");
-
-        
+    async Main(message) {
 
         // Fetch stuff needed
-        const triviaChannel = guild.channels.resolve(data["channel_id"]);
+        const triviaChannel = message.channel;
         
 
 
@@ -57,7 +49,7 @@ module.exports = {
         .addFields(
             {
                 name: `Round Host`,
-                value: member.displayName,
+                value: message.member.displayName,
                 inline: true
             },
             {
