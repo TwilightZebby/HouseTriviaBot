@@ -2,6 +2,8 @@
 const fs = require('fs');
 const Discord = require("discord.js");
 
+const QUESTIONJSON = require('../questions.json');
+
 // VARIABLE IMPORTS
 const { client } = require('../constants.js');
 const { PREFIX } = require('../config.js');
@@ -46,6 +48,8 @@ module.exports = {
       // IMPORT MODULE
       const SlashCommands = client.modules.get("slashModule");
 
+      const QTEMP = Object.values(QUESTIONJSON);
+
 
 
       // Embed time!
@@ -59,7 +63,13 @@ module.exports = {
         },
         {
           name: `GitHub Link`,
-          value: `[github.com/TwilightZebby/TriviaBot](https://github.com/TwilightZebby/TriviaBot)`
+          value: `[github.com/TwilightZebby/TriviaBot](https://github.com/TwilightZebby/TriviaBot)`,
+          inline: true
+        },
+        {
+          name: `Total Questions`,
+          value: `${QTEMP.length}`,
+          inline: true
         }
       );
 

@@ -196,9 +196,9 @@ module.exports = {
 
 
         // Special message for House Leads
-        if ( HOUSELEADERIDS.includes(member.user.id) ) {
+        /*if ( HOUSELEADERIDS.includes(member.user.id) ) {
           return await SlashCommands.Callback(data, `Sorry, ${member.displayName} is one of the House Leads, and as such they cannot earn points!`);
-        }
+        }*/
 
 
 

@@ -366,7 +366,8 @@ module.exports = {
             }
 
             //return isAnswerCorrect && !m.member.roles.cache.has(CONFIG.STAFFID); // This is for STAFF ROLE check
-            return isAnswerCorrect && !CONFIG.HOUSELEADERIDS.includes(m.member.user.id); // This is for specific House Leads
+            //return isAnswerCorrect && !CONFIG.HOUSELEADERIDS.includes(m.member.user.id); // This is for specific House Leads
+            return isAnswerCorrect && m.member.user.id !== "156482326887530498"; // For only preventing Zebby
         }
 
 
