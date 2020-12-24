@@ -188,6 +188,35 @@ module.exports = {
 
 
 
+    /**
+     * Registers the Countdown Slash Command
+     * 
+     * @param {Discord.Guild} guild 
+     * 
+     * @returns {Promise<Discord.Message>} wrapped Message
+     */
+    async RegisterCountdown(guild) {
+
+        // Data
+        const data = {};
+        data.name = "countdown";
+        data.description = "Shows how long left until next Speed Trivia Round";
+
+        client.api.applications(client.user.id).guilds(guild.id).commands().post({data});
+
+    },
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -208,6 +237,7 @@ module.exports = {
         await this.RegisterTop(guild);
         await this.RegisterPoints(guild);
         await this.RegisterSubmit(guild);
+        await this.RegisterCountdown(guild);
 
 
         return;

@@ -284,6 +284,12 @@ client.on('raw', async (evt) => {
 
 
 
+        case "countdown":
+            const CountdownCommand = client.commands.get("countdown");
+            return await CountdownCommand.execute(authorGuild, data, CommandData);
+
+
+
         default:
             return;
 
