@@ -72,6 +72,11 @@ module.exports = {
         timeZone: 'America/Chicago'
       }).format(nextRoundDate);
 
+      const EST = new Intl.DateTimeFormat('en-US', {
+        hour: 'numeric', minute: 'numeric', hour12: true,
+        timeZone: 'America/Toronto'
+      }).format(nextRoundDate);
+
       const PST = new Intl.DateTimeFormat('en-US', {
         hour: 'numeric', minute: 'numeric', hour12: true,
         timeZone: 'America/Los_Angeles'
@@ -80,6 +85,11 @@ module.exports = {
       const CET = new Intl.DateTimeFormat('en', {
         hour: 'numeric', minute: 'numeric', hour12: true,
         timeZone: 'Europe/Paris'
+      }).format(nextRoundDate);
+
+      const MST = new Intl.DateTimeFormat('en-US', {
+        hour: 'numeric', minute: 'numeric', hour12: true,
+        timeZone: 'America/Phoenix'
       }).format(nextRoundDate);
 
 
@@ -133,8 +143,8 @@ module.exports = {
             inline: true
           },
           {
-            name: `\u200B`,
-            value: `\u200B`,
+            name: `EST`,
+            value: `${EST}`,
             inline: true
           },
           {
@@ -148,11 +158,12 @@ module.exports = {
             inline: true
           },
           {
-            name: `\u200B`,
-            value: `\u200B`,
+            name: `MST`,
+            value: `${MST}`,
             inline: true
           }
-        );
+        )
+        .setFooter(`Does NOT update in real time!`);
 
 
         await SlashCommands.Callback(data, ``, embed);
