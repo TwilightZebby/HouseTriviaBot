@@ -17,6 +17,7 @@ const EMPTYSCORES = require('../templates/templateJSON.json');
 let questionInterval;
 let delay = 50000;
 let askedQuestions = [ 0 ];
+let correctUserIDs = [];
 
 // THIS MODULE
 module.exports = {
@@ -326,11 +327,11 @@ module.exports = {
 
 
         // Select a random question
-        let questionNumber = Math.floor( ( Math.random() * (qtemp.length + 1) ) + 1 );
+        let questionNumber = Math.floor( ( Math.random() * qtemp.length ) + 1 );
 
         // Ensure we don't get repeated questions
         while ( askedQuestions.includes(questionNumber) ) {
-            questionNumber = Math.floor( ( Math.random() * (qtemp.length + 1) ) + 1 );
+            questionNumber = Math.floor( ( Math.random() * qtemp.length ) + 1 );
         }
 
         let chosenQuestion = QSTORE[`${questionNumber}`].question;
@@ -365,9 +366,7 @@ module.exports = {
                 }
             }
 
-            //return isAnswerCorrect && !m.member.roles.cache.has(CONFIG.STAFFID); // This is for STAFF ROLE check
-            //return isAnswerCorrect && !CONFIG.HOUSELEADERIDS.includes(m.member.user.id); // This is for specific House Leads
-            return isAnswerCorrect && m.member.user.id !== "156482326887530498"; // For only preventing Zebby
+            return isAnswerCorrect && m.member.user.id !== "156482326887530498" && !correctUserIDs.includes(m.member.user.id);
         }
 
 
@@ -377,7 +376,9 @@ module.exports = {
         collector.on('collect', async (message) => {
 
             // Visual marker
-            await message.react('✅');
+            //await message.react('✅'); // Commented out to prevent HITTING THE DAMN RATELIMIT
+
+            correctUserIDs.push(message.author.id); // Prevent peeps cheating by answering twice
 
             if ( userAnswers.length === 10 ) {
                 return;
