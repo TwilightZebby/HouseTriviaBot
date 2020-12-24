@@ -427,7 +427,7 @@ client.on('message', async message => {
 
 
         // Check to make sure Command is NOT a Slash Command
-        const regularCommands = [ "register", "deregister", "start" ];
+        const regularCommands = [ "register", "deregister", "start", "setcountdown" ];
         if ( !regularCommands.includes(command.name) )
         {
             return;

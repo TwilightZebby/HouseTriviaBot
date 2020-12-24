@@ -1,7 +1,8 @@
 /node_modules
 config.js
 /templates
-/questions.json
-/playerScores.json
-/houseScores.json
-/roundScores.json
+questions.json
+playerScores.json
+houseScores.json
+roundScores.json
+countdown.json

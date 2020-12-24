@@ -46,6 +46,8 @@ module.exports = {
       // MODULE IMPORTS
       //const Errors = client.modules.get("errorLogger");
       const SlashCommands = client.modules.get("slashModule");
+
+      const COUNTDOWN = require('../countdown.json');
       
 
 
@@ -53,7 +55,7 @@ module.exports = {
 
       
       // Date stuff
-      const nextRoundDate = Date.parse("2020-12-24T19:00:00+00:00");
+      const nextRoundDate = Date.parse(COUNTDOWN["countdown"]);
       const now = Date.now();
 
       // Readability
