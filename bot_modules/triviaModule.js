@@ -320,7 +320,7 @@ module.exports = {
 
 
 
-        const userAnswers = [];
+        let userAnswers = [];
 
         // Temp copy QUESTIONS into this Object so I can fetch its size
         let qtemp = Object.values(QSTORE);
@@ -367,6 +367,7 @@ module.exports = {
             }
 
             return isAnswerCorrect && m.member.user.id !== "156482326887530498" && !correctUserIDs.includes(m.member.user.id);
+            //return isAnswerCorrect && !correctUserIDs.includes(m.member.user.id);
         }
 
 
@@ -379,7 +380,7 @@ module.exports = {
 
             // Visual marker
             // Also attempt to prevent hitting the DAMN STRICT REACTION RATELIMIT (1 per 750 ms)
-            if ( reactionLimit < 1 ) {
+            /*if ( reactionLimit < 1 ) {
                 await message.react('✅');
                 reactionLimit++;
             }
@@ -388,7 +389,7 @@ module.exports = {
                     await message.react('✅');
                     reactionLimit--;
                 }, 750);
-            }
+            }*/
 
             correctUserIDs.push(message.author.id); // Prevent peeps cheating by answering twice
 
@@ -403,6 +404,8 @@ module.exports = {
         });
 
         collector.on('end', async (collected, reason) => {
+
+            correctUserIDs = [];
 
             // Time is up! Check Array
             let embed = new Discord.MessageEmbed().setColor('#008bb5')
