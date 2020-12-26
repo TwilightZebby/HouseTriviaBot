@@ -372,11 +372,23 @@ module.exports = {
 
 
         // Begin listening for the correct answer
+        let reactionLimit = 0;
+
         const collector = channel.createMessageCollector(filter, { time: 20000, max: 10 });
         collector.on('collect', async (message) => {
 
             // Visual marker
-            //await message.react('✅'); // Commented out to prevent HITTING THE DAMN RATELIMIT
+            // Also attempt to prevent hitting the DAMN STRICT REACTION RATELIMIT (1 per 750 ms)
+            if ( reactionLimit < 1 ) {
+                await message.react('✅');
+                reactionLimit++;
+            }
+            else {
+                setTimeout(async () => {
+                    await message.react('✅');
+                    reactionLimit--;
+                }, 750);
+            }
 
             correctUserIDs.push(message.author.id); // Prevent peeps cheating by answering twice
 
