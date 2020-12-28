@@ -11,7 +11,7 @@ const QSTORE = require('../questions.json'); // Bringing in the Questions & Answ
 
 const HOUSESCORES = require('../houseScores.json');
 const PLAYERSCORES = require('../playerScores.json');
-const TEMPSCORES = require('../roundScores.json');
+//const TEMPSCORES = require('../roundScores.json');
 const EMPTYSCORES = require('../templates/templateJSON.json');
 
 let questionInterval;
@@ -147,6 +147,8 @@ module.exports = {
      * @returns {Promise<Discord.Message>} wrapped Message
      */
     async Results(channel) {
+
+        let TEMPSCORES = require('../roundScores.json');
 
         // MODULE IMPORTS
         const Errors = client.modules.get("errorLogger");
@@ -307,6 +309,8 @@ module.exports = {
      * @param {Discord.TextChannel} channel 
      */
     async AskQuestion(channel, currentNumber) {
+
+        let TEMPSCORES = require('../roundScores.json');
 
         // MODULE IMPORTS
         const Errors = client.modules.get("errorLogger");
@@ -477,11 +481,20 @@ module.exports = {
 
 
             // Embed
-            embed.setDescription(`The quickest 10 peeps to answer Question ${currentNumber} first were:
-            
-            ${messageArray.join(`\n`)}
-            
-            ${currentNumber + 1 === CONFIG.QUESTION_AMOUNT ? "Last Question in 10 seconds..." : currentNumber === CONFIG.QUESTION_AMOUNT ? "Round is over! Results in 10 seconds..." : "Next Question in 10 seconds..."}`);
+            embed.addFields(
+                {
+                    name: `Correct Answer(s)`,
+                    value: `\u200B ${questionAnswers.join(`, `)}`
+                },
+                {
+                    name: `Quickest 10 peeps to answer Question ${currentNumber}`,
+                    value: `\u200B ${messageArray.join(`\n`)}`
+                },
+                {
+                    name: `\u200B`,
+                    value: `\u200B ${currentNumber + 1 === CONFIG.QUESTION_AMOUNT ? "Last Question in 10 seconds..." : currentNumber === CONFIG.QUESTION_AMOUNT ? "Round is over! Results in 10 seconds..." : "Next Question in 10 seconds..."}`
+                }
+            );
 
             await channel.send(embed);
             delete embed; // free up cache

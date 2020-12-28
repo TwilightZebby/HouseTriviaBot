@@ -67,7 +67,7 @@ module.exports = {
           inline: true
         },
         {
-          name: `Total Questions`,
+          name: `Total Unasked Questions`,
           value: `${QTEMP.length}`,
           inline: true
         }
