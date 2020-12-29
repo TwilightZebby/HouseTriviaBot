@@ -9,8 +9,8 @@ const CONFIG = require('../config.js');
 // OTHER IMPORTS
 const QSTORE = require('../questions.json'); // Bringing in the Questions & Answers
 
-const HOUSESCORES = require('../houseScores.json');
-const PLAYERSCORES = require('../playerScores.json');
+//const HOUSESCORES = require('../houseScores.json');
+//const PLAYERSCORES = require('../playerScores.json');
 //const TEMPSCORES = require('../roundScores.json');
 const EMPTYSCORES = require('../templates/templateJSON.json');
 
@@ -149,6 +149,7 @@ module.exports = {
     async Results(channel) {
 
         let TEMPSCORES = require('../roundScores.json');
+        const HOUSESCORES = require('../houseScores.json');
 
         // MODULE IMPORTS
         const Errors = client.modules.get("errorLogger");
@@ -311,6 +312,8 @@ module.exports = {
     async AskQuestion(channel, currentNumber) {
 
         let TEMPSCORES = require('../roundScores.json');
+        const PLAYERSCORES = require('../playerScores.json');
+        const HOUSESCORES = require('../houseScores.json');
 
         // MODULE IMPORTS
         const Errors = client.modules.get("errorLogger");
