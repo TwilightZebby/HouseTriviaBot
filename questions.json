@@ -1,0 +1,465 @@
+{
+    "1": {
+        "question": "Santa wasn't always wearing red. What colour was he originally?",
+        "answers": [ "green" ]
+    },
+    "2": {
+        "question": "How many sides does a snowflake usually have?",
+        "answers": [ "six", "6" ]
+    },
+    "3": {
+        "question": "Who was the artist behind the song \"Ice Ice Baby\"?",
+        "answers": [ "vanilla ice" ]
+    },
+    "4": {
+        "question": "There are two well-known cartoon snowmen from children's movies. Give me one of their names",
+        "answers": [ "olaf", "frosty" ]
+    },
+    "5": {
+        "question": "Who originally wrote the classic story \"How the Grinch Stole Christmas\"?",
+        "answers": [ "dr. suess", "dr suess", "doctor suess", "dr.suess" ]
+    },
+    "6": {
+        "question": "Fill in the blank: Luke is a __________",
+        "answers": [ "hecc" ]
+    },
+    "7": {
+        "question": "Folklore says what action should be taken with two people underneath a mistletoe?",
+        "answers": [ "kiss", "kissing", "snog", "snogging" ]
+    },
+    "8": {
+        "question": "What animal lives at the South Pole, eats fish, and can slide on their belly?",
+        "answers": [ "penguins", "penguin", "zophos" ]
+    },
+    "9": {
+        "question": "In Minecraft, which block gets a festive texture every year around the 25th December?",
+        "answers": [ "chest", "chests", "double chest", "double chests" ]
+    },
+    "10": {
+        "question": "What is a common abbreviation for the word \"Christmas\"?",
+        "answers": [ "x-mas", "xmas" ]
+    },
+    "11": {
+        "question": "How many candles are usually in a Hanukkiah Menorah?",
+        "answers": [ "9", "nine" ]
+    },
+    "12": {
+        "question": "There are two things that are traditionally placed on top of a Christmas Tree. Give me one of them",
+        "answers": [ "angel", "star" ]
+    },
+    "13": {
+        "question": "In Minecraft, when an Evoker turns a blue Sheep into a red Sheep, it utters \"wololo\". What game is this a reference to?",
+        "answers": [ "aoe", "aoe2", "aoe 2", "aoe ii", "aoeii", "age of empires 2", "age of empires ii" ]
+    },
+    "14": {
+        "question": "Fill in the blank: Nobody expects the __________ Inquisition!",
+        "answers": [ "spanish" ]
+    },
+    "15": {
+        "question": "What is the most infamous creepypasta in Minecraft?",
+        "answers": [ "herobrine" ]
+    },
+    "16": {
+        "question": "What is the name of the Among Us cosmetic pet given via Twitch Drops?",
+        "answers": [ "glitch", "glitch pet", "glitched", "glitched pet" ]
+    },
+    "17": {
+        "question": "Give me a random number between 582 and 595 (excluding 582 and 595)",
+        "answers": [ "583", "584", "585", "586", "587", "588", "589", "590", "591", "592", "593", "594" ]
+    },
+    "18": {
+        "question": "How many colours are there to pick from for your character in Among Us?",
+        "answers": [ "14", "fourteen" ]
+    },
+    "19": {
+        "question": "How many colors are there to pick from for your character in Among Us?",
+        "answers": [ "14", "fourteen" ]
+    },
+    "20": {
+        "question": "In Among Us, how many *known* maps are there?",
+        "answers": [ "4", "four" ]
+    },
+    "21": {
+        "question": "How many Discord Bots has Luke made for this Server?",
+        "answers": [ "6", "six" ]
+    },
+    "22": {
+        "question": "What letter is missing? A B C D E F G H J K L M N O P Q R S T U V W X Y Z",
+        "answers": [ "i" ]
+    },
+    "23": {
+        "question": "What letter is missing? A B C D E F G H I J K L M N O P Q R S T U W X Y Z",
+        "answers": [ "v" ]
+    },
+    "24": {
+        "question": "What letter is missing? A B C D E F G H I J K L N O P Q R S T U V W X Y Z",
+        "answers": [ "m" ]
+    },
+    "25": {
+        "question": "How many Winter House Roles are there on this Server?",
+        "answers": [ "7", "seven" ]
+    },
+    "26": {
+        "question": "Name one of the three original Starter Pokémon (that is, from Gen 1 Pokémon)",
+        "answers": [ "bulbasaur", "charmander", "squirtle" ]
+    },
+    "27": {
+        "question": "The Pokémon Eevee currently has 8 different evolutions - name one of them",
+        "answers": [ "vaporeon", "jolteon", "flareon", "umbreon", "leafeon", "sylveon", "glaceon", "espeon" ]
+    },
+    "28": {
+        "question": "Which villainous team in Pokémon is has been around the longest?",
+        "answers": [ "team rocket", "rocket", "rocket gang" ]
+    },
+    "29": {
+        "question": "According to Supernovablade's birthday list in <#458405422970437632>, which month has the most birthdays?",
+        "answers": [ "june" ]
+    },
+    "30": {
+        "question": "Give me the name of one of the two main characters from the game \"The Stanley Parable\"",
+        "answers": [ "stanley", "narrator" ]
+    },
+    "31": {
+        "question": "What is the name of Sherlock Holmes' brother?",
+        "answers": [ "mycroft" ]
+    },
+    "32": {
+        "question": "What is the full name of the T-Rex?",
+        "answers": [ "tryannosaurus rex" ]
+    },
+    "33": {
+        "question": "Who is the first character you meet after falling into the underground in the game \"Undertale\"?",
+        "answers": [ "flowey" ]
+    },
+    "34": {
+        "question": "According to the original anime season, which Pokémon is this as seen from above?",
+        "image": "https://i.ytimg.com/vi/0VeXDaI-5rM/maxresdefault.jpg",
+        "answers": [ "jigglypuff" ]
+    },
+    "35": {
+        "question": "According to the first episode of Doctor Who, \"An Unearthly Child\", which character originally thought of the acronym \"TARDIS\"?",
+        "answers": [ "susan" ]
+    },
+    "36": {
+        "question": "What is the name of DONTNOD's first ever game?",
+        "answers": [ "remember me" ]
+    },
+    "37": {
+        "question": "In the YouTube series \"ASDF Movie\", which animal could apparently never be taught to drive?",
+        "answers": [ "llama" ]
+    },
+    "38": {
+        "question": "Which Pokémon recently had their Trading Card ban lifted after 20 years by Uri Geller?",
+        "answers": [ "kadabra" ]
+    },
+    "39": {
+        "question": "Which year was the game \"Garry's Mod\" released?",
+        "answers": [ "2004" ]
+    },
+    "40": {
+        "question": "In the game \"Super Mario Bros.\", who is it that tells Maro that \"The Princess is in another castle\"?",
+        "answers": [ "toad" ]
+    },
+    "41": {
+        "question": "In the first Sonic the Hedgehog game, how many Chaos Emeralds can you collect?",
+        "answers": [ "six", "6" ]
+    },
+    "42": {
+        "question": "What colour Chaos Emerald does Tails have at the start of \"Sonic Adventure\"",
+        "answers": [ "purple" ]
+    },
+    "43": {
+        "question": "In the classic card game UNO, how many cards does each player start with?",
+        "answers": [ "7", "seven" ]
+    },
+    "44": {
+        "question": "Where would have been the 2020 Olympic Games hosted at?",
+        "answers": [ "japan", "tokyo" ]
+    },
+    "45": {
+        "question": "How many moons does the planet Mars have orbiting it?",
+        "answers": [ "two", "2" ]
+    },
+    "46": {
+        "question": "14 + 28 * 3 = ???",
+        "answers": [ "98" ]
+    },
+    "47": {
+        "question": "1 + 1 = ???",
+        "answers": [ "2", "two", "window" ]
+    },
+    "48": {
+        "question": "2 + 2 = ???",
+        "answers": [ "4", "four", "fish" ]
+    },
+    "49": {
+        "question": "9^2 = ???",
+        "answers": [ "81" ]
+    },
+    "50": {
+        "question": "82 - (5 * 3) + 11 = ???",
+        "answers": [ "78" ]
+    },
+    "51": {
+        "question": "What is the capital of Scotland?",
+        "answers": [ "edinburgh" ]
+    },
+    "52": {
+        "question": "According to \"The Hitchhiker's Guide to the Galaxy\", what is the answer to Life, The Universe, and Everything?",
+        "answers": [ "42" ]
+    },
+    "53": {
+        "question": "In the anime \"Assassination Classroom\", which class does Korosensei teach?",
+        "answers": [ "3e", "3-e", "3 e" ]
+    },
+    "54": {
+        "question": "In \"My Hero Academia\", what is the name of the retired Pro Hero whom Deku had his internship with?",
+        "answers": [ "gran torino", "gran", "torino" ]
+    },
+    "55": {
+        "question": "Name a block in Minecraft that the Ender Dragon cannot break (NOT including Bedrock)",
+        "answers": [ "obsidian", "end stone", "command block", "barrier", "iron bars", "end portal", "end gateway", "crying obsidian", "respawn anchor", "structure block" ]
+    },
+    "56": {
+        "question": "Name a block in Minecraft that emits light *in Java Edition* of the game",
+        "answers": [ "sculk sensor", "end portal frame", "dragon egg", "brown mushroom", "brewing stand", "amethyst bud", "respawn anchor", "magma", "candle", "amethyst cluster", "sea pickle",
+        "restone torch", "ender chest", "restone ore", "soul torch", "soul lantern", "soul fire", "soul campfire", "crying obsidian", "nether portal", "smoker", "furnace", "blast furnace",
+        "torch", "end rod", "shroomlight", "sea lantern", "restone lamp", "lava", "lantern", "jack o lantern", "jack o'lantern", "glowstone", "fire", "end portal", "end gateway", "conduit", "campfire", "beacon" ]
+    },
+    "57": {
+        "question": "What is the name of the island that \"Jurassic Park\" was built on?",
+        "answers": [ "isla nublar", "nublar" ]
+    },
+    "58": {
+        "question": "In the British show \"Doctor Who\", who played the 4th Doctor?",
+        "answers": [ "tom baker" ]
+    },
+    "59": {
+        "question": "In the British show \"Doctor Who\", who played the War Doctor?",
+        "answers": [ "john hurt" ]
+    },
+    "60": {
+        "question": "In the British show \"Doctor Who\", who played the 10th Doctor?",
+        "answers": [ "david tennant" ]
+    },
+    "61": {
+        "question": "What is the name of Discord's logo?",
+        "answers": [ "clyde" ]
+    },
+    "62": {
+        "question": "What is the name of Discord's mascot?",
+        "answers": [ "wumpus" ]
+    },
+    "63": {
+        "question": "In a game of Snooker, which colour ball is worth 3 points?",
+        "answers": [ "green" ]
+    },
+    "64": {
+        "question": "What Pokémon did Ash Ketchum catch *after* Pikachu?",
+        "answers": [ "caterpie" ]
+    },
+    "65": {
+        "question": "Which Pokémon was Ash Ketchum's *first* catch when he was in the Kalos Region?",
+        "answers": [ "froakie" ]
+    },
+    "66": {
+        "question": "Which studio developed the games \"Life is Strange\" and \"Tell Me Why\"?",
+        "answers": [ "dontnod" ]
+    },
+    "67": {
+        "question": "Which mythological character is said to be half-man and half-horse?",
+        "answers": [ "centaur" ]
+    },
+    "68": {
+        "question": "What is the 100th digit of Pi?",
+        "answers": [ "9" ]
+    },
+    "69": {
+        "question": "What is the name of the main *Human* character in the film and book series \"How To Train Your Dragon\"?",
+        "answers": [ "hiccup" ]
+    },
+    "70": {
+        "question": "What species is the character \"Chewbecca\" from the Star Wars set of films?",
+        "answers": [ "wookiee" ]
+    },
+    "71": {
+        "question": "True or False: BOPE is a faction in the game \"Counter Strike: Global Offensive\"",
+        "answers": [ "false" ]
+    },
+    "72": {
+        "question": "True or False: In the game \"Terraria\", the Martian Saucer mini-boss can drop an Influx Waver",
+        "answers": [ "true" ]
+    },
+    "73": {
+        "question": "How many sonatas did Ludwig van Beethoven write?",
+        "answers": [ "32" ]
+    },
+    "74": {
+        "question": "How much XP are you rewarded for completed all the main easter eggs in the game \"Call of Duty: Black Ops III Zombies\"?",
+        "answers": [ "1,000,000", "1000000", "1 million", "one million" ]
+    },
+    "75": {
+        "question": "True or False: The weapon \"R115 Resonator\" is a wonder weapon in the game Call of Duty: Zombies",
+        "answers": [ "false" ]
+    },
+    "76": {
+        "question": "True or False: You can sell your soul on eBay",
+        "answers": [ "false" ]
+    },
+    "77": {
+        "question": "True or False: The game \"Sonic the Hedgehog 2\" was originally meant to have a Time Travel system",
+        "answers": [ "true" ]
+    },
+    "78": {
+        "question": "Which is the largest state of the USA?",
+        "answers": [ "alaska" ]
+    },
+    "79": {
+        "question": "What is 9 when written in Binary?",
+        "answers": [ "1001" ]
+    },
+    "80": {
+        "question": "What is the title of the first ever Doctor Who episode to *not* use the title sequence?",
+        "answers": [ "sleep no more" ]
+    },
+    "81": {
+        "question": "Which year did the game Club Penguin originally launch?",
+        "answers": [ "2005" ]
+    },
+    "82": {
+        "question": "In the game Club Penguin, who was revealed to be the Director of the Elite Penguin Force (EPF) during Operation: Blackout?",
+        "answers": [ "aunt arctic" ]
+    },
+    "83": {
+        "question": "In the game Club Penguin, what is the name of the pirate captain of the Migrator?",
+        "answers": [ "rockhopper" ]
+    },
+    "84": {
+        "question": "In the game \"League of Legends\", which character is commonly known as \"The Sinister Blade\"?",
+        "answers": [ "katarina" ]
+    },
+    "85": {
+        "question": "True or False: The chemical element Lithium is named after the country of Lithuania",
+        "answers": [ "false" ]
+    },
+    "86": {
+        "question": "In the game Kingdom Hearts, how many members does Organization XIII have in total?",
+        "answers": [ "14" ]
+    },
+    "87": {
+        "question": "Which country is the train station \"Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch\" located?",
+        "answers": [ "wales" ]
+    },
+    "88": {
+        "question": "Who is the main antagonist from the Portal game franchise?",
+        "answers": [ "glados" ]
+    },
+    "89": {
+        "question": "Which year was the first Call of Duty game released?",
+        "answers": [ "2003" ]
+    },
+    "90": {
+        "question": "In the anime \"Ms. Kobayashi's Dragon Maid\", what is the name of Kobayashi's maid?",
+        "answers": [ "tohru" ]
+    },
+    "91": {
+        "question": "True or False: In the Sonic the Hedgehog franchise, Tails' real name is Miles Prower",
+        "answers": [ "true" ]
+    },
+    "92": {
+        "question": "In My Hero Academia's Sports Festival story arc, which student used Tenya Ida as a walking advertisement?",
+        "answers": [ "mei hatsume", "mei", "hatsume" ]
+    },
+    "93": {
+        "question": "How many numbered power generators are there in the Call of Duty: Zombies map \"Origins\"?",
+        "answers": [ "6", "six" ]
+    },
+    "94": {
+        "question": "True or False: Cats have whiskers under their legs",
+        "answers": [ "true" ]
+    },
+    "95": {
+        "question": "In Animal Crossing, who is the manager of the town shop?",
+        "answers": [ "tom nook", "tom", "nook" ]
+    },
+    "96": {
+        "question": "In the animated show \"Phineas and Ferb\", what is the name of the Flynn-Fletcher family pet?",
+        "answers": [ "perry" ]
+    },
+    "97": {
+        "question": "In the Fullmetal Alchemist anime series, what is the last name of Edward and Alphonse?",
+        "answers": [ "elric" ]
+    },
+    "98": {
+        "question": "True or False: There are 86,400 seconds in a day",
+        "answers": [ "true" ]
+    },
+    "99": {
+        "question": "Which planet is the closest to our Sun?",
+        "answers": [ "mercury" ]
+    },
+    "100": {
+        "question": "Two people in this community have both accidentally used the Minecraft command `/kill @e` - give me one of them.",
+        "answers": [ "zebby", "twilightzebby", "demon" ]
+    },
+    "101": {
+        "question": "Who must you never anger in fear of having your nico-nico kneecaps broken?",
+        "answers": [ "star", "ztarvok" ]
+    },
+    "102": {
+        "question": "Fill in the blank: In Soviet Russia, __________ doesn't bang desk, desk bangs __________",
+        "answers": [ "arch" ]
+    },
+    "103": {
+        "question": "Who is the resident collector of souls in this community?",
+        "answers": [ "lux", "reaper" ]
+    },
+    "104": {
+        "question": "[My Hero Academia] Give me one of the students who went up against **Ectoplasm** during Season 2's Final Exam Arc",
+        "answers": [ "tokoyami", "fumikage", "tsukuyomi", "tsuyu", "asui", "tsu", "froppy" ]
+    },
+    "105": {
+        "question": "[My Hero Academia] Give me one of the students who went up against **Nezu** during Season 2's Final Exam Arc",
+        "answers": [ "mina", "ashido", "alien queen", "denki", "kaminari", "chargebolt" ]
+    },
+    "106": {
+        "question": "[My Hero Academia] Give me one of the students who went up against **Aizawa** during Season 2's Final Exam Arc",
+        "answers": [ "shoto", "todoroki", "momo", "yaoyorozu", "creati" ]
+    },
+    "107": {
+        "question": "[My Hero Academia] Give me one of the members of the League of Villian's **Vanguard Action Squad**. (*Note: I am looking for their villian name*)",
+        "answers": [ "dabi", "himiko", "toga", "twice", "spinner", "mr compress", "mr. compress", "magne", "muscular", "mustard", "moonfish" ]
+    },
+    "108": {
+        "question": "When is Luke's birthday?",
+        "answers": [ "january 10th", "jan 10th", "10th jan", "10th january", "january 10", "jan 10", "10 jan", "10 january" ]
+    },
+    "109": {
+        "question": "Which member of the Staff Team can't upgrade their potato \"because it is irish\"?",
+        "answers": [ "fuzz", "texan" ]
+    },
+    "110": {
+        "question": "[RWBY] Name one of the members of Team JNPR",
+        "answers": [ "jaune", "arc", "nora", "valkyrie", "pyrrha", "nikos", "lie", "ren" ]
+    },
+    "111": {
+        "question": "[RWBY] Name one of the members of Cinder's Faction",
+        "answers": [ "cinder", "fall", "roman", "torchwick", "emerald", "sustrai", "mercury", "black", "neopolitan" ]
+    },
+    "112": {
+        "question": "[RWBY] Who has the nickname \"Sunny Little Dragon\"?",
+        "answers": [ "yang", "xiao", "long" ]
+    },
+    "113": {
+        "question": "[RWBY] Who claimed the Spring Maiden's powers for themselves after attempting to train the Spring Maiden?",
+        "answers": [ "raven", "branwen" ]
+    },
+    "114": {
+        "question": "[Sword Art Online] In the original Aincrad story arc, what nickname was given to Kirito after the first floor boss?",
+        "answers": [ "beater" ]
+    },
+    "115": {
+        "question": "[Sword Art Online] In the first episode of the Alicization story arc, which member of Laughing Coffin attacked Kirito/Kazuto in the real world?",
+        "answers": [ "johnny", "black" ]
+    }
+}

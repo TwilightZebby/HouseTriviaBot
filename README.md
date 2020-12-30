@@ -20,12 +20,6 @@ Additionally, the Bot will also know which Winter House/Role that User is in, an
 
 ---
 
-### Why are the questions and answers hidden?
-> Because I made this Repo public during our Trivia Rounds, so `questions.json` was kept hidden via `.gitignore` as to prevent peeps from cheating ;P
-> 
-> Also, it is staying hidden just in case we decide to use this Bot again for other seasonal Trivia Rounds on the Discord Server.
-
-
 ### Can I invite this Bot to my own Server?
 > Nope. Sorry!
 > 
